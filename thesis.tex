@@ -2,23 +2,26 @@
 % Declare document class, using 'twoside' option %
 %------------------------------------------------%
 % In document class, we can specify 'print' to present the print version, otherwise the electronic version will compile.
-\documentclass[12pt, twoside, print]{report}
+\documentclass[12pt]{report}
 \input{packages.tex}
 \pagenumbering{gobble} % Turn page numbering off during front matter
-\pagestyle{headings}
+\pagestyle{plain}
 \begin{document}
 %--------------%
 % Front matter %
 %--------------%
 \input{Front/title}
 
-\input{Front/declaration}
+
+\pagenumbering{roman}
+\input{Front/abstract}
+\setcounter{page}{2}
+
+\input{Front/preface}
 
 \input{Front/dedication}
 
 \input{Front/acknowledgements}
-\pagenumbering{roman}
-\input{Front/abstract}
 
 %-----------%
 % Main body %
